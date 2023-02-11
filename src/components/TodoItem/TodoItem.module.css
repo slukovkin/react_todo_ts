@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 10px;
+  background: teal;
+  color: wheat;
+  font-size: 20px;
+}
+
+.remove_todo {
+  background: inherit;
+  color: darkred;
+  border: 3px solid darkred;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0 6px;
+  border-radius: 100%;
+  font-size: 24px;
+}
+
+.checked {
+  width: 25px;
+  height: 25px;
+}

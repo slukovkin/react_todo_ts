@@ -1,0 +1,32 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 50px auto;
+}
+.title {
+  margin: 10px 0;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.content {
+  margin: 10px 0;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  outline: none;
+}
+
+.submit {
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  background: teal;
+  color: wheat;
+  font-size: 18px;
+  cursor: pointer;
+}
