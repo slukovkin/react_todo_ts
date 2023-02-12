@@ -16,6 +16,8 @@ export const App: React.FC = () => {
     setVisible(prev => !prev)
   }
 
+  const removeTodo = (id: number): void => {}
+
   useEffect(() => {
     !visible ? setTextContent("Добавить задачу"): setTextContent("Отменить задачу")
   },[visible])

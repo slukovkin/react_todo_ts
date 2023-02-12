@@ -27,6 +27,7 @@ export const TodoForm: React.FC<NewTodoProps> = ({ onAdd }) => {
       content,
       completed: false
     }
+        
     onAdd(JSON.stringify(newTodo))
     setTitle('')
     setContent('')
