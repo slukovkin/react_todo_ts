@@ -1,32 +1,27 @@
-import { useEffect, useState } from 'react'
-import { TodoNew } from './TodoNew/TodoNew'
-import { ITodo } from '../types/data'
-import cl from './App.module.css'
+import { useState } from "react"
+import { TodoForm } from "./TodoForm"
 
-const App: React.FC = () => {
-  const [ visible, setVisible ] = useState(false)
-  const [ todos, setTodos ] = useState<ITodo[]>([])
-  const [ message, setMessage ] = useState('')
+export const App: React.FC = () => {
+  const [todos, setTodos] = useState<string[]>([])
+  const [visible, setVisible] = useState<boolean>(false)
 
-  const addTask = () => {
-    setVisible(!visible)  
+  const addNewTodo = (todo: string): void => {
+    setTodos([todo, ...todos])
   }
 
-  // const addNewTask = (data): void => {   
-  //   setTodos([...todos, data])
-  // }
-
-  useEffect(() => {
-    todos.length == 0 ? setMessage("В списке нет созданных задач"): null
-  }, [todos])
+  const onNewTask = () => {
+    setVisible(prev => !prev)
+  }
 
   return (
-    <div className={cl.wrapper}>
-      <h2>Список задач содердит { todos.length } задачи</h2>
-      <button onClick={addTask} className={cl.btn}>Добывить новую задачу</button>
-      {visible ? <TodoNew />: <h5>{message}</h5> }  
+    <div className="container">
+      <h2>Список задач {todos.length}</h2>
+      <button 
+        onClick={onNewTask}
+        style={{margin: 10, padding: "10px 20px", background: "darkgreen", color: "wheat", borderRadius: 10}}>Добавить задачу</button>
+        {
+          visible && <TodoForm onAdd={addNewTodo} />
+        }
     </div>
   )
 }
-
-export {App}

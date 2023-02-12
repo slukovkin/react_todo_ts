@@ -1,0 +1,8 @@
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: rgb(56, 69, 168);
+  border: none;
+  border-radius: 10px;
+}
