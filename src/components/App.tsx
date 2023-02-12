@@ -1,11 +1,13 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { TodoForm } from "./TodoForm"
 
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<string[]>([])
   const [visible, setVisible] = useState<boolean>(false)
+  const [textContent, setTextContent] = useState<string>('')
 
   const addNewTodo = (todo: string): void => {
+    setVisible(prev => !prev)
     setTodos([todo, ...todos])
   }
 
@@ -13,12 +15,16 @@ export const App: React.FC = () => {
     setVisible(prev => !prev)
   }
 
+  useEffect(() => {
+    !visible ? setTextContent("Добавить задачу"): setTextContent("Отменить задачу")
+  },[visible])
+
   return (
     <div className="container">
       <h2>Список задач {todos.length}</h2>
       <button 
         onClick={onNewTask}
-        style={{margin: 10, padding: "10px 20px", background: "darkgreen", color: "wheat", borderRadius: 10}}>Добавить задачу</button>
+        className="btn_submit">{textContent}</button>
         {
           visible && <TodoForm onAdd={addNewTodo} />
         }

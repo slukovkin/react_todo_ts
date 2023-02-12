@@ -33,22 +33,16 @@ export const TodoForm: React.FC<NewTodoProps> = ({ onAdd }) => {
 
   return (
       <form className={cl.form}>
-        <label htmlFor="title"
-          style={{margin: 10, color: 'wheat'}}  
-        >Заголовок задачи</label>
-        <input type="text" id="title"
-          style={{margin: "10px 0px", padding: "10px 0px", border: "none"}}
+        <label htmlFor="title" className={cl.label_title} >Заголовок задачи</label>
+        <input type="text" id="title" className={cl.title}
           value={title}
           onChange={getTitleHandler} />
         <textarea cols={30} rows={10}
-          style={{margin: "10px 0px", padding: "10px 0px", border: "none"}}
+          className={cl.content}
           value={content}
           onChange={getContentHandler} />
-        <button 
-          style={{margin: "10 0", border: "none", padding: 10, borderRadius: "0 0px 10px 10px",
-          backgroundColor: 'darkgreen', color: 'wheat'
-        }}
-        onClick={submitNewTodo}>Создать</button>
+        <button className={cl.btn_submit}
+          onClick={submitNewTodo}>Создать</button>
       </form>
   )
 }
