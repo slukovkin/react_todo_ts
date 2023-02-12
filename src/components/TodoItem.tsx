@@ -9,12 +9,12 @@ interface TodoItemProps {
 
 export const TodoItem: React.FC<TodoItemProps> = ({task}) => {
 
-    const todo = JSON.parse(task)
+    const todo = JSON.parse(task) 
 
   return (
     <div className={cl.container}>
       <input type="checkbox" />
-      <h2>{todo.title}</h2>
+      <span>{todo.title}</span>
       <p><HighlightOffOutlinedIcon /></p>
     </div>
   )

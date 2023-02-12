@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { TodoForm } from "./TodoForm"
 import { TodoList } from "./TodoList"
+import { ITodo } from "../types/data"
 
-export const App: React.FC = () => {
+export const App = () => {
   const [todos, setTodos] = useState<string[]>([])
   const [visible, setVisible] = useState<boolean>(false)
   const [textContent, setTextContent] = useState<string>('')
