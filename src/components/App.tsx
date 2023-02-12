@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { TodoForm } from "./TodoForm"
+import { TodoList } from "./TodoList"
 
 export const App: React.FC = () => {
   const [todos, setTodos] = useState<string[]>([])
@@ -26,7 +27,7 @@ export const App: React.FC = () => {
         onClick={onNewTask}
         className="btn_submit">{textContent}</button>
         {
-          visible && <TodoForm onAdd={addNewTodo} />
+          visible ? <TodoForm onAdd={addNewTodo} />: <TodoList tasks={todos} />
         }
     </div>
   )

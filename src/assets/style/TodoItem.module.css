@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 5px 20px;
+  margin: 10px;
+  background: rgb(193, 196, 239);
+  color: teal;
+  border-radius: 10px;
+}
+
+.container p {
+  color: darkred;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.container input {
+  width: 25px;
+  height: 25px;
+}
