@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import TextField from '@mui/material/TextField'
 import cl from '../assets/style/TodoForm.module.css'
+import { ITodo } from '../types/data'
 
 interface NewTodoProps {
-  onAdd(todo: string): void
+  onAdd(todo: ITodo): void
 }
 
 export const TodoForm: React.FC<NewTodoProps> = ({ onAdd }) => {
@@ -21,14 +22,14 @@ export const TodoForm: React.FC<NewTodoProps> = ({ onAdd }) => {
   const submitNewTodo = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault()
     if(title === '' || content === '') return
-    const newTodo = {
+    const newTodo: ITodo = {
       id: Date.now(),
       title,
       content,
       completed: false
     }
         
-    onAdd(JSON.stringify(newTodo))
+    onAdd(newTodo)
     setTitle('')
     setContent('')
   }

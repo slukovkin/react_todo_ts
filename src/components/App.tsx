@@ -4,11 +4,11 @@ import { TodoList } from "./TodoList"
 import { ITodo } from "../types/data"
 
 export const App = () => {
-  const [todos, setTodos] = useState<string[]>([])
+  const [todos, setTodos] = useState<ITodo[]>([])
   const [visible, setVisible] = useState<boolean>(false)
   const [textContent, setTextContent] = useState<string>('')
 
-  const addNewTodo = (todo: string): void => {
+  const addNewTodo = (todo: ITodo): void => {
     setVisible(prev => !prev)
     setTodos([todo, ...todos])
   }
