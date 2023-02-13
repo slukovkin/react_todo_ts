@@ -30,7 +30,7 @@ export const App = () => {
         onClick={onNewTask}
         className="btn_submit">{textContent}</button>
         {
-          visible ? <TodoForm onAdd={addNewTodo} />: <TodoList tasks={todos} />
+          visible ? <TodoForm onAdd={addNewTodo} />: <TodoList todos={todos} />
         }
     </div>
   )

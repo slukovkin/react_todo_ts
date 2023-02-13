@@ -5,15 +5,15 @@ import { ITodo } from '../types/data';
 
 
 interface TodoItemProps {
-  task: ITodo
+  todo: ITodo
 }
 
-export const TodoItem: React.FC<TodoItemProps> = ({task}) => {
+export const TodoItem: React.FC<TodoItemProps> = ({todo}) => {
 
   return (
     <div className={cl.container}>
       <input type="checkbox" />
-      <span>{task.title}</span>
+      <span>{todo.title}</span>
       <p><HighlightOffOutlinedIcon /></p>
     </div>
   )
